@@ -1,16 +1,18 @@
 #include <stdio.h>
 /**
- * main - Entry point
+ * main - Entry point[print alphabet]
  *
  * Return: Always 0(sucess)
  */
 int main(void)
 {
-	char a = "a";
-	while (true)
+	char alphabet = "a";
+
+	while (alphabet < = "z")
 	{
-		putchar(a);
-		a++;
+		putchar(alphabet);
+		alphabet++;
 	}
+	putchar("\n");
 	return (0);
 }
