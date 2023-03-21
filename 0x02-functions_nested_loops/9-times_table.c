@@ -29,7 +29,6 @@ void times_table(void)
 				_putchar(' ');
 				if ((table < 10 && (table + row) < 10))
 					_putchar(' ');
-					
 			}
 		}
 		_putchar('\n');
