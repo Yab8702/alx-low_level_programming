@@ -30,6 +30,6 @@ void print_to_98(int n)
 		}
 	}
 	else
-		printf("%d ", max_98);
+		printf("%d", max_98);
 	printf("\n");
 }
