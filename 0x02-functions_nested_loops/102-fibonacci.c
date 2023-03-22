@@ -11,7 +11,7 @@ int main(void)
 	long int fib1 = 1, fib2 = 1, fib3;
 
 	printf("%ld, ", fib2);
-	for (x = 0; x < 50; x++)
+	for (x = 1; x < 50; x++)
 	{
 		fib3 = fib1 + fib2;
 		printf("%ld", fib3);
