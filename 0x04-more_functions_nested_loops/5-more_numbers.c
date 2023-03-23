@@ -10,7 +10,7 @@ void more_numbers(void)
 
 	for (row = 0; row < 10; row++)
 	{
-		for (col = 0; col < 14; col++)
+		for (col = 0; col <= 14; col++)
 			_putchar(col + '0');
 		_putchar('\n');
 	}
