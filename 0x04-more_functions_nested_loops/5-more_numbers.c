@@ -14,5 +14,4 @@ void more_numbers(void)
 			_putchar(col + '0');
 		_putchar('\n');
 	}
-	_putchar('\n');
 }
