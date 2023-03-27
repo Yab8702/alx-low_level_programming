@@ -8,34 +8,30 @@
 
 int _atoi(char *str)
 {
-	long int result = 0;
-	int len = 0, sign = 1, i, j;
+        int result = 0, len = 0, j = 0, w = 0, d =0, num;
 
 	while (str[len] != '\0') /* get the length of string*/
 		len++;
-	/* ignoring whitspace and check for sign*/
-	for (i = 0; i < len; i++)
-	{
-		if (str[i] == ' ' || str[i] == '+')
-			continue;
-		else if (str[i] == '-')
-			sign *= -1;
-		else if (str[i] >= '0' && str[i] <= '9')
-			break;
-	}
 	/* converting string to integer */
 
-	for (j = 0; j < len; j++)
+	while (j < len && w == 0)
 	{
+		if (str[j] == '-')
+			++d;
 		if (str[j] >= '0' && str[j] <= '9')
-			result = result * 10 + (str[j] - '0');
-		else if ((j > 0) && (str[j - 1] >= '0' && str[j - 1] <= '9') &&
-			 !(str[j] >= '0' && str[j] <= '9'))
 		{
-			break;
+			num = str[j] - '0';
+			if (d % 2)
+				num *= -1;
+			result = result * 10 + num;
+			w = 1;
+			if (str[j + 1] < '0' || str[j + 1] > '9')
+				break;
+			w = 0;
 		}
-		else
-			continue;
+		j++;
 	}
-	return (sign * result);
+	if (w == 0)
+		return (0);
+	return (result);
 }
