@@ -8,12 +8,11 @@
 
 int _atoi(char *str)
 {
-        int result = 0, len = 0, j = 0, w = 0, d =0, num;
+	int result = 0, len = 0, j = 0, w = 0, d = 0, num;
 
 	while (str[len] != '\0') /* get the length of string*/
 		len++;
 	/* converting string to integer */
-
 	while (j < len && w == 0)
 	{
 		if (str[j] == '-')
