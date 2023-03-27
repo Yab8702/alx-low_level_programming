@@ -8,7 +8,8 @@
 
 int _atoi(char *str)
 {
-	int result = 0, len = 0, sign = 1, i, j;
+	long int result = 0;
+	int len = 0, sign = 1, i, j;
 
 	while (str[len] != '\0') /* get the length of string*/
 		len++;
