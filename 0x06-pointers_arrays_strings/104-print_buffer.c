@@ -10,44 +10,35 @@
 
 void print_buffer(char *buffer, int size)
 {
-	int i, j, k, position = 0, index = 0, m;
+	int position = 0, i, j, index;
 
-	for (i = 0; i < size && position < size; i++)
+	if (size <= 0)
 	{
-		printf("%08x: ", position), j = 0, k = 0, m = 0;
-		while (j < 10 && size > position)
+		printf("\n");
+		return;
+	}
+	while (position < size)
+	{
+		j = size - position < 10 ? size - position : 10;
+		printf("%08x: ", position);
+		for (i = 0; i < 10; i++)
 		{
-			if (j % 2 == 0 && j > 0)
+			if (i < j)
+				printf("%02x", buffer[position + i]);
+			else
+				printf("  ");
+			if (i % 2)
 				printf(" ");
-			printf("%02x", buffer[position]), j++, position++;
 		}
-		if (j < 10 && j > 0)
+		for (i = 0; i < j; i++)
 		{
-			if ((10 - j) % 2 != 0)
-			{
-				while (m <= (10 - j))
-				{
-					printf(" "), m++;
-				}
-			}
-			else
-			{
-				while (m <= (10 - j))
-				{
-					printf(" "), printf(" "), m++;
-				}
-			}
-		}
-		if (j % 2 == 0)
-			printf(" ");
-		while (k < j)
-		{
-			if (buffer[index] >= 32 && buffer[index] <= 126)
-				printf("%c", buffer[index]);
-			else
-				printf(".");
-			k++, index++;
+			index = buffer[position + i];
+
+			if (index < 32 || index > 132)
+				index = '.';
+			printf("%c", index);
 		}
 		printf("\n");
+		position += 10;
 	}
 }
