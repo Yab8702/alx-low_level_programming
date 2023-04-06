@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdio.h>
+
 
 /**
   * is_palindrome - return if a string is palindrom or not
@@ -10,15 +10,24 @@
 
 int is_palindrome(char *str)
 {
-	int len = 0;
-
-	if (*str)
-	{
-		len++;
-		len += is_palindrome(str + 1);
-	}
-	return (_palindrome(str, 0, len - 1));
+	if (*str == '\0')
+		return (1);
+	return (_palindrome(str, 0, _strlen(str) - 1));
 }
+
+/**
+  * _strlen - calculate the length of the string
+  * @str: string to calculate the length
+  * Return: length of the string
+  */
+
+int _strlen(char *str)
+{
+	if (*str == '\0')
+		return (0);
+	return (1 + _strlen(str + 1));
+}
+
 
 /**
   * _palindrome - check if the string is palindrome| not
