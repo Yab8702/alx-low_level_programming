@@ -26,7 +26,12 @@ int **alloc_grid(int col, int row)
 		*(Two_D + i) = malloc(sizeof(int) * col);
 
 		if (*(Two_D + i) == NULL)
+		{
+			for (j = 0; j < i; j++)
+				free(*(Two_D + j));
+			free(Two_D);
 			return (NULL);
+		}
 	}
 
 	for (i = 0; i < row; i++)
