@@ -14,14 +14,33 @@ int word_count(char *s)
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (s[i] == ' ')
-			continue;
-		count_words++;
-		while (s[i] != ' ' && s[i] != '\0')
-			i++;
+			count_words++;
 	}
 	return (count_words);
 }
 
+/**
+  * count_space - space checker
+  * @st: string
+  * Return: 0 has character | > 0(space)
+  */
+
+int count_space(char *st)
+{
+	int j = 0;
+
+	while (st[j] != '\0')
+	{
+		if (st[j] != ' ')
+		{
+			j = 0;
+			break;
+		}
+		j++;
+	}
+	return (j);
+
+}
 
 /**
   * strtow - splits a string into words.
@@ -31,15 +50,15 @@ int word_count(char *s)
 
 char **strtow(char *str)
 {
-	char **words;
-	char *end;
-	int i, j, len = 0, count_words = 1;
+	char **words, *end;
+	int i, j, len = 0, count_words = 1, spc;
 
-	if (str == NULL)
+	if (str == NULL || *str == '\0')
+		return (NULL);
+	spc = count_space(str);
+	if (spc != 0)
 		return (NULL);
 	count_words += word_count(str);
-	if (count_words == 1)
-		return (NULL);
 	words = malloc(sizeof(char *) * (count_words + 1));
 	if (words == NULL)
 		return (NULL);
