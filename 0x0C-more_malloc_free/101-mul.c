@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <string.h>
 
 
 /**
@@ -32,6 +31,21 @@ int is_num(char *s)
 }
 
 /**
+ * _strlen - returns the length of a string
+ * @str: string
+ * Return: @s length
+ */
+int _strlen(char *str)
+{
+	int i = 0;
+
+	while (*(s + i) != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+/**
   * multiply - multiply two numbers
   * @n1: the first number
   * @n2: the second number
@@ -40,11 +54,11 @@ int is_num(char *s)
 
 void multiply(char *n1, char *n2)
 {
-	int len1 = strlen(n1);
-	int len2 = strlen(n2);
+	int len1 = _strlen(n1);
+	int len2 = _strlen(n2);
 	int *result = malloc(sizeof(int) * (len1 + len2));
 	int i, j, digit1, digit2, prod, pos1, pos2, sum;
-
+	
 	if (!result)
 		return (1);
 	for (i = len1 - 1; i >= 0; i--)
