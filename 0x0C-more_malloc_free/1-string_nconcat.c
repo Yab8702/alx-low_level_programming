@@ -17,9 +17,9 @@ char *string_nconcat(char *str1, char *str2, unsigned int num)
 	char *new_str;
 	unsigned int i, j, len1 = 0, len2 = 0;
 
-	while (str1[len1] != '\0')
+	while (str1 && str1[len1] != '\0')
 		len1++;
-	while (str2[len2] != '\0')
+	while (str2 && str2[len2] != '\0')
 		len2++;
 	if (num < len2)
 		new_str = malloc((len1 + num + 1) * sizeof(char));
