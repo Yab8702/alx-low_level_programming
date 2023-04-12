@@ -39,7 +39,7 @@ int _strlen(char *str)
 {
 	int i = 0;
 
-	while (*(s + i) != '\0')
+	while (*(str + i) != '\0')
 	{
 		i++;
 	}
@@ -59,8 +59,6 @@ void multiply(char *n1, char *n2)
 	int *result = malloc(sizeof(int) * (len1 + len2));
 	int i, j, digit1, digit2, prod, pos1, pos2, sum;
 	
-	if (!result)
-		return (1);
 	for (i = len1 - 1; i >= 0; i--)
 	{
 		for (j = len2 - 1; j >= 0; j--)
