@@ -33,4 +33,5 @@ void print_strings(const char *s, const unsigned int n, ...)
 			printf("%s", s);
 	}
 	printf("\n");
+	va_end(op);
 }
