@@ -40,17 +40,21 @@ int main(int argc, char **argv)
 	file_des1 = open(argv[1], O_RDONLY);
 	byte = read(file_des1, buffer, sizeof(buffer));
 	file_des2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	if (file_des1 < 0 || byte < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
-	wrt = write(file_des2, buffer, byte);
-	if (file_des2 < 0 || wrt < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
+	do {
+		if (file_des1 < 0 || byte < 0)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			exit(98);
+		}
+		wrt = write(file_des2, buffer, byte);
+		if (file_des2 < 0 || wrt < 0)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
+		byte = read(file_des1, buffer, sizeof(buffer));
+		file_des2 = open(argv[2], O_WRONLY | O_APPEND);
+	} while (byte > 0);
 	cls(file_des1);
 	cls(file_des2);
 	return (0);
