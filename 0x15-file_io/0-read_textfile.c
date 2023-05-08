@@ -18,7 +18,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	file_des = open(filename, O_RDONLY);
 	buffer = malloc(sizeof(char) * letters);
-	if (!buffer || file_des < 0)
+	if (buffer == NULL || file_des < 0)
 		return (0);
 	byte = read(file_des, buffer, letters);
 	if (byte < 0)
