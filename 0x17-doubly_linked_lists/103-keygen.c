@@ -15,6 +15,7 @@ int main(int argc, char *argv[])
 	char c[] = "-ACHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3QlarPhdKIouk";
 	char pass[7];
 
+	(void)argc;
 	len = strlen(argv[1]);
 	pass[0] = c[(len ^ 59) & 63];
 	for (i = 0, add = 0; i < len; i++)
@@ -24,14 +25,14 @@ int main(int argc, char *argv[])
 		b *= argv[1][i];
 	pass[2] = c[(b ^ 85) & 63];
 	for (b = argv[1][0], i = 0; i < len; i++)
-		if (b <= argv[1][i])
+		if ((char)b <= argv[1][i])
 			b = argv[1][i];
 	srand(b ^ 14);
 	pass[3] = c[rand() & 63];
 	for (b = 0, i = 0; i < len; i++)
 		b += argv[1][i] * argv[1][i];
 	pass[4] = c[(b ^ 239) & 63];
-	for (b = 0, i = 0; i < argv[1][0]; i++)
+	for (b = 0, i = 0; (char)i < argv[1][0]; i++)
 		b = rand();
 	pass[5] = c[(b ^ 229) & 63];
 	pass[6] = '\0';
