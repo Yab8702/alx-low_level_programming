@@ -37,8 +37,6 @@ algorithm section .
 * [0x0F. C - Variadic functions](./0x0F-variadic_functions)
 * [0x1A. C - Hash tables](./0x1A-hash_tables)
 * [0x1B. C - Sorting algorithms & Big O ](./0x1B-sorting_algorithms)
-* [0x1C. C - Makefiles](./0x1C-makefiles)
-* [0x1D. C - Binary trees](./0x1D-binary_trees)
 * [0x1E. C - Search Algorithms](./0x1E-search_algorithms)
 
 
@@ -57,7 +55,7 @@ To access any project you are willing to view , please proceed like this:
 
 
 
-        - git clone https://github.com/Pericles001/alx-low_level_programming
+        - git clone https://github.com/yab8702/alx-low_level_programming
         - cd alx-low_level_programming
 
 
