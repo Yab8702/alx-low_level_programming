@@ -36,7 +36,7 @@ algorithm section .
 * [0x0E. C - Structures, typedef](./0x0E-structures_typedef)
 * [0x0F. C - Variadic functions](./0x0F-variadic_functions)
 * [0x1A. C - Hash tables](./0x1A-hash_tables)
-* [0x1B. C - Sorting algorithms & Big O ](./0x1B-sorting_algorithms)
+* [0x1B. C - Sorting algorithms & Big O ](../0x1B-sorting_algorithms)
 * [0x1E. C - Search Algorithms](./0x1E-search_algorithms)
 
 
