@@ -63,7 +63,7 @@ To access any project you are willing to view , please proceed like this:
 
 
 
-         cd [0x00. C - Hello, World](./0x00-hello_world)
+         cd 0x00-hello_world
 
 
 * test your desired file
